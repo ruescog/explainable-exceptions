@@ -49,6 +49,15 @@ import random
 from explainable_exceptions.core import explain
 ```
 
+The following cell must be preceded by:
+
+``` py
+%%explain <username>
+```
+
+Where `<username>` must be replaced (if provided) by the username of the
+huggingchat account that will be used to request information.
+
 ``` python
 random.choice([])
 ```

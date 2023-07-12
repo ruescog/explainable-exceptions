@@ -4,6 +4,6 @@ project:
 website:
   title: "explainable-exceptions"
   site-url: "https://ruescog.github.io/explainable-exceptions"
-  description: "A Python module to explain exceptions in execution-time using AOP"
+  description: "A Python module to explain exceptions in execution-time using a magic cell"
   repo-branch: main
   repo-url: "https://github.com/ruescog/explainable-exceptions"
