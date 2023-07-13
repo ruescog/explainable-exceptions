@@ -16,7 +16,10 @@ import os
 import traceback
 
 # %% ../nbs/00_core.ipynb 4
-def login(user: str = None, password: str = None, *, credentials_dir: str = "."):
+def login(user: str = None, # username of the huggingchat account that is going to be used to send the messages. If None, it will be infered from possible json files in the working directory or requested to the user.
+          password: str = None, # in plain-text, the password of that account. Not necessary if there exist a credentials file. Requested to the user otherwise.
+          *, credentials_dir: str = "." # the path where the credentials file is. The working directory will be selected by default.
+         ):
     """
     Logs the user into the huggingface chat using the user + password or the user + credentials json.
     """
@@ -52,7 +55,10 @@ def login(user: str = None, password: str = None, *, credentials_dir: str = ".")
     finally:
         return cookies
     
-def explain_exception(cookies, exception_message, wait = 0):
+def explain_exception(cookies, # cookies used in the connection.
+                      exception_message, # error message sent to the model.
+                      wait = 0 # number of seconds to wait until sending the message.
+                     ):
     if not wait:
         logging.info("Conecting with hugchat to obtain the information about the exception.")
     else:
@@ -75,7 +81,10 @@ def explain_exception(cookies, exception_message, wait = 0):
     
 @register_cell_magic
 @needs_local_scope
-def explain(line, cell, local_ns):
+def explain(line, # additional information added to the execution of the magic command. If provided, it will be trated as the username.
+            cell, # cell that potentially raised the exception.
+            local_ns # infered from the decorator. The local variables (needed to catch the imports).
+           ):
     try:
         exec(cell, globals(), local_ns)
     except Exception as e:
