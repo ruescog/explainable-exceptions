@@ -5,7 +5,8 @@ d = { 'settings': { 'branch': 'main',
                 'doc_host': 'https://ruescog.github.io',
                 'git_url': 'https://github.com/ruescog/explainable-exceptions',
                 'lib_path': 'explainable_exceptions'},
-  'syms': { 'explainable_exceptions.core': { 'explainable_exceptions.core.explain': ('core.html#explain', 'explainable_exceptions/core.py'),
-                                             'explainable_exceptions.core.explain_exception': ( 'core.html#explain_exception',
-                                                                                                'explainable_exceptions/core.py'),
-                                             'explainable_exceptions.core.login': ('core.html#login', 'explainable_exceptions/core.py')}}}
+  'syms': { 'explainable_exceptions.core': { 'explainable_exceptions.core._explain_exception': ( 'core.html#_explain_exception',
+                                                                                                 'explainable_exceptions/core.py'),
+                                             'explainable_exceptions.core._login': ('core.html#_login', 'explainable_exceptions/core.py'),
+                                             'explainable_exceptions.core.explain': ( 'core.html#explain',
+                                                                                      'explainable_exceptions/core.py')}}}
