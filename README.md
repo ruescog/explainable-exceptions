@@ -44,28 +44,32 @@ huggingchat model to generate a possible solution. This response will be
 shown by the jupyter standard output.
 
 ``` python
-import random
-
 from explainable_exceptions.core import explain
 ```
 
-The following cell must be preceded by:
+A usage example could be:
 
-``` py
-%%explain <username>
+``` javascript
+%%explain `username`
+
+import random
+random.choice([])
 ```
 
-Where `<username>` must be replaced (if provided) by the username of the
+Where `username` must be replaced (if provided) by the username of the
 huggingchat account that will be used to request information.
 
 ``` python
+#%%explain ruescog
+
+import random
 random.choice([])
 ```
 
     CRITICAL:root:Traceback (most recent call last):
-      File "/home/ruescog/explainable-exceptions/explainable_exceptions/core.py", line 78, in explain
+      File "/home/ruescog/explainable-exceptions/explainable_exceptions/core.py", line 81, in explain
         exec(cell, globals(), local_ns)
-      File "<string>", line 3, in <module>
+      File "<string>", line 5, in <module>
       File "/grupoa/config/miniconda3/lib/python3.8/random.py", line 290, in choice
         raise IndexError('Cannot choose from an empty sequence') from None
     IndexError: Cannot choose from an empty sequence
@@ -74,33 +78,17 @@ random.choice([])
 
 ## Huggingchat response [(online version)](https://huggingface.co/chat):
 
-Hello! That error message suggests that you are trying to use the
-`choice()` function from the `random` module on an empty list or
-sequence. In order to fix the error, ensure that your code creates and
-assigns a non-empty sequence for `random.choices()`. Here is an example
-of how to create a simple randomized sequence using the `list`
-constructor:
-
-``` bash
-import random
-seq = [1, 2, 3]
-random.shuffle(seq)
-print("Shuffled sequence:")
-for item in seq:
-    print(item)
-```
-
-This should randomly shuffle the elements within the sequence and
-generate output like this:
-
-``` vbnet
-Shuffled sequence:
-2
-3
-1
-```
-
-Let me know if there’s something else I could assist you with!
+*That error is raised by `random.choice()` function which is used for
+generating random elements from iterables like lists, strings etc., and
+it seems that there might be no element available to pick from.* *To fix
+the issue you need to ensure that either pass some argument to the
+function or check if any item exists before calling the function on that
+object.* *You can refer to python documentation for more details :
+[Random
+Functions](https://docs.python.org/3/library/random.html#random-functions)
+. In case you face similar issues please feel free to ask me , i am here
+to help you :) . Also I am just starting so would love if you could rate
+interact with me as well.*
 
 ------------------------------------------------------------------------
 

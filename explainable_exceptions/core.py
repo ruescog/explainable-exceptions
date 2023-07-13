@@ -32,7 +32,9 @@ def login(user: str = None, password: str = None, *, credentials_dir: str = ".")
     except:
         logging.critical("Credentials file cannot be found. Requesting credentials...")
         
-        if not user:
+        if user:
+            logging.info(f"Username infered from command line: {user}")
+        else:
             user = input("Username: ")
         
         if not password:
