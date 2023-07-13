@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "explainable-exceptions",
+    "section": "",
+    "text": "Artificial Intelligence is being used in several fields, including computer engineering and programming.\nDuring this work, we pretend to facilitate the process of programming as much as possible adding the option to use a NLP (Natural Language Processing) model to help the user to understand and solve the exceptions that may appear while programming.\nAs simple as using a magic cell, the user will be able to send the exception to the huggingface chat and obtain a possible solution to solve the exception. In this process, the user must be logged in his huggingchat account. Credentials can be saved to be requested only once.\nAfter receiving the response, the user will be able to request another response if the given one is not helpful enough."
+  },
+  {
+    "objectID": "index.html#install",
+    "href": "index.html#install",
+    "title": "explainable-exceptions",
+    "section": "Install",
+    "text": "Install\nTo install explainable_exceptions you must use the following pip command:\npip install explainable_exceptions"
+  },
+  {
+    "objectID": "index.html#how-to-use",
+    "href": "index.html#how-to-use",
+    "title": "explainable-exceptions",
+    "section": "How to use",
+    "text": "How to use\nIn order to use the magic cell, we need to import it from the core of explainable_exceptions. The cell is called explain.\nAfter that, we can label cells using the magic cell command (%%). We can provide a huggingchat user or we can just use the command (if there are not credentials, then it will ask to generate them).\nIf an exception is raised inside a magic cell, it will be sent to the huggingchat model to generate a possible solution. This response will be shown by the jupyter standard output.\n\nfrom explainable_exceptions.core import explain\n\nA usage example could be:\n%%explain `username`\n\nimport random\nrandom.choice([])\nWhere username must be replaced (if provided) by the username of the huggingchat account that will be used to request information.\n\n#%%explain ruescog\n\nimport random\nrandom.choice([])\n\nCRITICAL:root:Traceback (most recent call last):\n  File \"/home/ruescog/explainable-exceptions/explainable_exceptions/core.py\", line 81, in explain\n    exec(cell, globals(), local_ns)\n  File \"&lt;string&gt;\", line 5, in &lt;module&gt;\n  File \"/grupoa/config/miniconda3/lib/python3.8/random.py\", line 290, in choice\n    raise IndexError('Cannot choose from an empty sequence') from None\nIndexError: Cannot choose from an empty sequence\n\nWARNING:root:Be careful, the following response has been generated automatically by a Natural Language Processing Model, so the answer may be incorrect or false.\n\n\nHuggingchat response (online version):\n\n\nThat error is raised by random.choice() function which is used for generating random elements from iterables like lists, strings etc., and it seems that there might be no element available to pick from. To fix the issue you need to ensure that either pass some argument to the function or check if any item exists before calling the function on that object. You can refer to python documentation for more details : Random Functions . In case you face similar issues please feel free to ask me , i am here to help you :) . Also I am just starting so would love if you could rate interact with me as well.\n\n\n\n\n\n\nDo you need another answer? (y/n) n\n\n\nIndexError: Cannot choose from an empty sequence"
+  },
+  {
+    "objectID": "index.html#huggingchat-response-online-version",
+    "href": "index.html#huggingchat-response-online-version",
+    "title": "explainable-exceptions",
+    "section": "Huggingchat response (online version):",
+    "text": "Huggingchat response (online version):"
+  },
+  {
+    "objectID": "core.html",
+    "href": "core.html",
+    "title": "core",
+    "section": "",
+    "text": "source\n\nexplain\n\n explain (line, cell, local_ns)\n\n\n\n\n\n\n\n\n\nDetails\n\n\n\n\nline\nadditional information added to the execution of the magic command. If provided, it will be trated as the username.\n\n\ncell\ncell that potentially raised the exception.\n\n\nlocal_ns\ninfered from the decorator. The local variables (needed to catch the imports)."
+  }
+]
