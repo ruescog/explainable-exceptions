@@ -70,7 +70,7 @@ def _explain_exception(cookies, # cookies used in the connection.
     try:
         while user_confirmation != "n":
             logging.warning("Be careful, the following response has been generated automatically by a Natural Language Processing Model, so the answer may be incorrect or false.")
-            response = chatbot.chat(f"I was coding with Python and I have found this exception message: {exception_message}. How can I solve it?")
+            response = chatbot.chat(f"I was coding with Python and I have found this exception message: {exception_message}. How can I solve it?", temperature=0.85) # https://huggingface.co/spaces/huggingchat/chat-ui/discussions/170
             display(Markdown("## Huggingchat response [(online version)](https://huggingface.co/chat):"))
             display(Markdown(response))
             display(Markdown("---"))
